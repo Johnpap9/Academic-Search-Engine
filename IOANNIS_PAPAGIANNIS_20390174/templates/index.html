@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Μηχανή Αναζήτησης Ακαδημαϊκών Εργασιών</title>
+</head>
+<style>
+        body {
+            background-color: #008B8B; /* Χρώμα φόντου */
+            /* Ή */
+            background-image: url('background-image.jpg'); /* Εικόνα φόντου */
+            /* Μπορείτε να επιλέξετε ή το background-color ή το background-image, ανάλογα με το τι προτιμάτε */
+        }
+    </style>
+<body style="text-align: center;">
+    <h1 style="color: #483D8B;">Αναζήτηση Ακαδημαϊκών Εργασιών</h1>
+    <form action="/search" method="post">
+        <label for="query">Εισάγετε τον όρο αναζήτησης:</label>
+        <input type="text" id="query" name="query" required>
+        
+        <label for="query">Συγγραφέας:</label>
+        <input type="text" id="author" name="author">
+        
+        <label for="query">Ημερομηνία Δημοσίευσης:</label>
+        <input type="text" id="date" name="date">
+        
+        <button type="submit" style="background-color: #483D8B; color: white; padding: 10px 20px; border: none; cursor: pointer;">Αναζήτηση</button>
+
+    </form>
+    
+    <!-- Boolean Retrieval Checkbox -->
+    <label style="color: #483D8B;">
+        <input type="checkbox" name="algorithm" value="boolean">
+        Χρήση Boolean Retrieval
+    </label>
+
+    
+    <!-- Vector Space Model Checkbox -->
+    <label style="color: #483D8B;">
+        <input type="checkbox" name="algorithm" value="vsm">
+        Χρήση Vector Space Model
+    </label>
+    
+    <!-- BM25 Checkbox -->
+    <label style="color: #483D8B;">
+        <input type="checkbox" name="algorithm" value="bm25">
+        Χρήση BM25
+    </label>
+    <!-- TF-IDF Checkbox -->
+    <label style="color: #483D8B;">
+        <input type="checkbox" name="algorithm" value="tfidf">
+        Χρήση TF-IDF
+    </label>
+</body>
+</html> 
+    
+    

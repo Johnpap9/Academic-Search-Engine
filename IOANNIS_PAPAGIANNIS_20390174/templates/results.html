@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Αποτελέσματα Αναζήτησης</title>
+</head>
+<body>
+    <h1>Αποτελέσματα Αναζήτησης για "{{ query }}"</h1>
+    
+    <!-- Boolean Retrieval Results -->
+    <h2>Boolean Retrieval</h2>
+    {% if boolean_results %}
+        <u1>
+            {% for result in boolean_results %}
+                <li>
+                    <h2>{{ result['Τίτλος'] }}</h2>
+                    <p>Συγγραφείς: {{ result['Συγγραφείς']|join(', ') }}</p>
+                    <p>Περίληψη: {{result ['Περίληψη'] }}</p>
+                    <p>Ημερομηνία Δημοσίευσης: {{ result['Ημερομηνία Δημοσίευσης'] }}</p>
+                    <a href="{{ result['Σύνδεσμος']}}" target="_blank">Σύνδεσμος</a>
+                </li>
+            {% endfor %}
+        </u1>
+        {% else %}
+            <p>Δεν βρέθηκαν αποτελέσματα.</p>
+        {% endif %}
+    
+    <!-- Vector Space Model Results -->
+    <h2>Vector Space Model</h2>
+    {% if vsm_results %}
+        <u1>
+            {% for result in vsm_results %}
+                <li>
+                    <h2>{{ result['Τίτλος'] }}</h2>
+                    <p>Συγγραφείς: {{ result['Συγγραφείς']|join(', ') }}</p>
+                    <p>Περίληψη: {{result ['Περίληψη'] }}</p>
+                    <p>Ημερομηνία Δημοσίευσης: {{ result['Ημερομηνία Δημοσίευσης'] }}</p>
+                    <a href="{{ result['Σύνδεσμος']}}" target="_blank">Σύνδεσμος</a>
+                </li>
+            {% endfor %}
+        </u1>
+        {% else %}
+            <p>Δεν βρέθηκαν αποτελέσματα.</p>
+        {% endif %}
+        
+    <!-- BM25 Results -->
+    <h2>BM25</h2>
+    {% if bm25_results %}
+        <u1>
+            {% for result in bm25_results %}
+                <li>
+                    <h2>{{ result['Τίτλος'] }}</h2>
+                    <p>Συγγραφείς: {{ result['Συγγραφείς']|join(', ') }}</p>
+                    <p>Περίληψη: {{result ['Περίληψη'] }}</p>
+                    <p>Ημερομηνία Δημοσίευσης: {{ result['Ημερομηνία Δημοσίευσης'] }}</p>
+                    <a href="{{ result['Σύνδεσμος']}}" target="_blank">Σύνδεσμος</a>
+                </li>
+            {% endfor %}
+        </u1>
+        {% else %}
+            <p>Δεν βρέθηκαν αποτελέσματα.</p>
+        {% endif %}
+</body>
+</html>
